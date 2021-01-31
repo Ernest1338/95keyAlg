@@ -9,24 +9,58 @@ for i in range(5):
     while len(str(tripNum))<3:
         tripNum = str(tripNum)+"0"
 
-    multiple_of_seven = 7*random.randint(1,6)
     num_of_len_seven = str(random.randint(0, 9999999))
     num_added_together = 0
 
-    for i in num_of_len_seven:
-        num_added_together+=int(i)
+    for a in num_of_len_seven:
+        num_added_together+=int(a)
 
-    while (num_added_together!=7 and num_added_together!=14 and num_added_together!=21 and num_added_together!=28 and num_added_together!=35 
-           and num_added_together!=42 and num_added_together!=49 and num_added_together!=56 and num_added_together!=63):
+    while num_added_together%7!=0:
 
         num_of_len_seven = str(random.randint(0, 9999999))
         num_added_together = 0
 
-        for i in num_of_len_seven:
-            num_added_together+=int(i)
+        for a in num_of_len_seven:
+            num_added_together+=int(a)
 
     while len(num_of_len_seven)<7:
         num_of_len_seven+="0"
 
     key = str(tripNum)+"-"+str(num_of_len_seven)
+    print(key)
+
+print("\n5 CD Keys (OEM): ")
+for i in range(5):
+    first_three_digits = str(random.randint(1,366))
+    while len(first_three_digits)<3:
+        first_three_digits = "0"+first_three_digits
+
+    second_two_digits = str(random.randint(95, 102))
+    if len(second_two_digits)==3:
+        second_two_digits = second_two_digits[1:]
+
+    num_of_len_seven = "0"+str(random.randint(0, 999999))
+    num_added_together = 0
+
+    for a in num_of_len_seven:
+        num_added_together+=int(a)
+
+    while num_added_together%7!=0:
+
+        num_of_len_seven = "0"+str(random.randint(0, 999999))
+        num_added_together = 0
+
+        for a in num_of_len_seven:
+            num_added_together+=int(a)
+
+    while len(num_of_len_seven)<7:
+        num_of_len_seven+="0"
+
+    last_five_digits = str(random.randint(0,99999))
+
+    while len(last_five_digits)<5:
+        last_five_digits+="0"
+
+    key = str(first_three_digits)+str(second_two_digits)+"-OEM-"+str(num_of_len_seven)+"-"+str(last_five_digits)
+
     print(key)
