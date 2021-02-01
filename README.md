@@ -1,4 +1,4 @@
-# Keygen for Windows 95, Windows NT 4.0 & Office 95 written in many different programming languages.
+# Key generation algorithm for Windows 95, Windows NT 4.0 & Office 95 implemented in many different programming languages.
 ## Including:
 - Python 3,
 - Python 2,
