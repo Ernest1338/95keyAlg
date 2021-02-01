@@ -1,6 +1,6 @@
 import random
 
-print("5 CD Keys: ")
+print("5 CD Keys:")
 for i in range(5):
     tripNum = random.randint(0, 999)
     while tripNum==333 or tripNum==444 or tripNum==555 or tripNum==666 or tripNum==777 or tripNum==888 or tripNum==999:
@@ -29,7 +29,7 @@ for i in range(5):
     key = str(tripNum)+"-"+str(num_of_len_seven)
     print(key)
 
-print("\n5 CD Keys (OEM): ")
+print("\n5 CD Keys (OEM):")
 for i in range(5):
     first_three_digits = str(random.randint(1,366))
     while len(first_three_digits)<3:
