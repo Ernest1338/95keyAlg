@@ -44,7 +44,7 @@ class main {
     string first_three_digits = rnd.Next(1, 366+1).ToString();
     
     while (first_three_digits.Length<3) {
-        first_three_digits+="0";
+        first_three_digits = "0"+first_three_digits;
     }
     
     string second_two_digits = rnd.Next(95, 102).ToString();

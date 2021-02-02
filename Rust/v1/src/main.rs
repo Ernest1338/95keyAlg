@@ -41,7 +41,7 @@ fn gen_oem() {
     let mut first_three_digits = rand::thread_rng().gen_range(1..366+1).to_string();
 
     while first_three_digits.chars().count()<3 {
-        first_three_digits.push('0');
+        first_three_digits.insert(0, '0');
     }
 
     let mut second_two_digits = rand::thread_rng().gen_range(95..102+1).to_string();
