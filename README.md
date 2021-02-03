@@ -10,6 +10,16 @@
 - Bash,
 - Rust,
 - Java,
-- Go.
+- Go,
+- Dart,
+- F#,
+- Haskell,
+- Kotlin,
+- Lua,
+- R,
+- Ruby,
+- Scala,
+- Swift,
+- Typescript.
 
-### Note: Code present here is at the moment NOT good nor efficient. This may change in the future.
+### Note: Code present here is at the moment not great nor super efficient. This may change in the future.
