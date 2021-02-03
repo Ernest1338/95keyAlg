@@ -111,13 +111,13 @@ gen_oem() {
 
 main() {
     echo "5 CD Keys:"
-    for i in {1..500}
+    for i in {1..5}
     do
         gen_key
     done
     echo ""
     echo "5 CD Keys (OEM):"
-    for i in {1..500}
+    for i in {1..5}
     do
         gen_oem
     done
