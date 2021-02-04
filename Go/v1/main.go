@@ -67,17 +67,17 @@ func gen_oem() {
         second_two_digits = second_two_digits[1:]
     }
     
-    var num_of_len_seven int = r1.Intn(9999999)
+    var num_of_len_seven int = r1.Intn(999999)
     var num_added_together int = sumDigits(num_of_len_seven)
     
     for num_added_together%7!=0 {
-        num_of_len_seven = r1.Intn(9999999)
+        num_of_len_seven = r1.Intn(999999)
         num_added_together = sumDigits(num_of_len_seven)
     }
     
     var num_of_len_seven_string string = strconv.Itoa(num_of_len_seven)
     
-    for len(num_of_len_seven_string)<7 {
+    for len(num_of_len_seven_string)<6 {
         num_of_len_seven_string += "0"
     }
     
@@ -87,7 +87,7 @@ func gen_oem() {
         last_five_digits += "0"
     }
     
-    var key string = first_three_digits+second_two_digits+"-OEM-"+num_of_len_seven_string+"-"+last_five_digits
+    var key string = first_three_digits+second_two_digits+"-OEM-0"+num_of_len_seven_string+"-"+last_five_digits
     
     fmt.Println(key)
 }
