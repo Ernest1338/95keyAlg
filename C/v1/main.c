@@ -4,8 +4,6 @@
 #include <math.h>
 #include <string.h>
 
-// NOTE: This code is especially bad. This was my close to first try writing code in pure C.
-
 int lenHelper(unsigned x) {
     if (x >= 1000000000) return 10;
     if (x >= 100000000)  return 9;
