@@ -48,7 +48,7 @@ function gen_oem() {
         second_two_digits = second_two_digits.substring(1);
     }
 
-    var num_of_len_seven = (Math.floor((Math.random() * 9999999) + 0)).toString();
+    var num_of_len_seven = (Math.floor((Math.random() * 999999) + 0)).toString();
     var num_added_together = 0;
 
     for(i=0; i<num_of_len_seven.length; i++) {
@@ -56,7 +56,7 @@ function gen_oem() {
     }
 
     while(num_added_together%7!=0) {
-        num_of_len_seven = (Math.floor((Math.random() * 9999999) + 0)).toString();
+        num_of_len_seven = (Math.floor((Math.random() * 999999) + 0)).toString();
         num_added_together = 0;
 
         for(i=0; i<num_of_len_seven.length; i++) {
@@ -64,7 +64,7 @@ function gen_oem() {
         }
     }
 
-    while(num_of_len_seven.length<7) {
+    while(num_of_len_seven.length<6) {
         num_of_len_seven+="0";
     }
 
@@ -74,7 +74,7 @@ function gen_oem() {
         last_five_digits+="0"
     }
 
-    var key = first_three_digits+second_two_digits+"-OEM-"+num_of_len_seven+"-"+last_five_digits;
+    var key = first_three_digits+second_two_digits+"-OEM-0"+num_of_len_seven+"-"+last_five_digits;
 
     document.write(key+"<br>");
 
