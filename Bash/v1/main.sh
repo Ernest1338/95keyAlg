@@ -68,7 +68,7 @@ gen_oem() {
         second_two_digits=${second_two_digits:1}
     fi
 
-    num_of_len_seven=$[ 1 + $RANDOM * 999 % 9999999 ]
+    num_of_len_seven=$[ 1 + $RANDOM * 999 % 999999 ]
     num_added_together=0
 
     for i in $(echo $num_of_len_seven | sed -e 's/\(.\)/\1\n/g')
@@ -78,7 +78,7 @@ gen_oem() {
 
     while [ $(( $num_added_together % 7 )) -ne 0 ]
     do
-        num_of_len_seven=$[ 1 + $RANDOM * 999 % 9999999 ]
+        num_of_len_seven=$[ 1 + $RANDOM * 999 % 999999 ]
         num_added_together=0
 
         for i in $(echo $num_of_len_seven | sed -e 's/\(.\)/\1\n/g')
@@ -89,7 +89,7 @@ gen_oem() {
 
     num_of_len_seven_len=$(echo $num_of_len_seven | wc -c)
 
-    while [ $num_of_len_seven_len -lt 8 ]
+    while [ $num_of_len_seven_len -lt 7 ]
     do
         num_of_len_seven=$(echo $num_of_len_seven\0)
         num_of_len_seven_len=$(echo $num_of_len_seven | wc -c)
@@ -104,7 +104,7 @@ gen_oem() {
         last_five_digits_len=$(echo $last_five_digits | wc -c)
     done
 
-    key=$(echo $first_three_digits$second_two_digits\-OEM-$num_of_len_seven\-$last_five_digits)
+    key=$(echo $first_three_digits$second_two_digits\-OEM-0$num_of_len_seven\-$last_five_digits)
 
     echo $key
 }
