@@ -51,7 +51,7 @@ function gen_oem() {
         $second_two_digits = substr($second_two_digits, 1);
     }
     
-    $num_of_len_seven = rand(0, 9999999);
+    $num_of_len_seven = rand(0, 999999);
     $num_added_together = 0;
     $num_array = str_split((string)$num_of_len_seven);
     
@@ -60,7 +60,7 @@ function gen_oem() {
     }
     
     while($num_added_together%7!=0) {
-        $num_of_len_seven = rand(0, 9999999);
+        $num_of_len_seven = rand(0, 999999);
         $num_added_together = 0;
         $num_array = str_split((string)$num_of_len_seven);
         
@@ -69,7 +69,7 @@ function gen_oem() {
         }
     }
     
-    while(strlen((string)$num_of_len_seven)<7) {
+    while(strlen((string)$num_of_len_seven)<6) {
         $num_of_len_seven .= 0;
     }
     
@@ -78,7 +78,7 @@ function gen_oem() {
         $last_five_digits .= 0;
     }
     
-    $key = $first_three_digits.$second_two_digits."-OEM-".$num_of_len_seven."-".$last_five_digits;
+    $key = $first_three_digits.$second_two_digits."-OEM-0".$num_of_len_seven."-".$last_five_digits;
     
     echo $key."\n";
 }
