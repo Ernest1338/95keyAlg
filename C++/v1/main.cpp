@@ -54,7 +54,7 @@ void gen_oem() {
         second_two_digits.erase(0, 1);
     }
 
-    std::string num_len_of_seven = std::to_string(rand() % 9999999+1);
+    std::string num_len_of_seven = std::to_string(rand() % 999999+1);
     int num_added_together = 0;
 
     for(char i : num_len_of_seven) {
@@ -63,7 +63,7 @@ void gen_oem() {
     }
 
     while(num_added_together%7!=0) {
-        num_len_of_seven = std::to_string(rand() % 9999999+1);
+        num_len_of_seven = std::to_string(rand() % 999999+1);
         num_added_together = 0;
 
         for(char i : num_len_of_seven) {
@@ -72,7 +72,7 @@ void gen_oem() {
         }
     }
 
-    while(num_len_of_seven.size()<7) {
+    while(num_len_of_seven.size()<6) {
         num_len_of_seven+="0";
     }
 
@@ -82,7 +82,7 @@ void gen_oem() {
         last_five_digits+="0";
     }
 
-    std::string key = first_three_digits+second_two_digits+"-OEM-"+num_len_of_seven+"-"+last_five_digits;
+    std::string key = first_three_digits+second_two_digits+"-OEM-0"+num_len_of_seven+"-"+last_five_digits;
 
     std::cout << key << std::endl;
 }
