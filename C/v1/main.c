@@ -4,7 +4,7 @@
 #include <math.h>
 #include <string.h>
 
-// NOTE: This code is especially BAD. This was my close to first try in writing code in pure C.
+// NOTE: This code is especially bad. This was my close to first try writing code in pure C.
 
 int lenHelper(unsigned x) {
     if (x >= 1000000000) return 10;
@@ -69,7 +69,7 @@ void gen_oem() {
 
     int second_two_digits = rand() % 8+95;
 
-    int num_of_len_seven= rand() % 9999999+1;
+    int num_of_len_seven= rand() % 999999+1;
     int num_added_together = 0;
     int copy_of_num_of_len_seven = num_of_len_seven;
 
@@ -79,7 +79,7 @@ void gen_oem() {
     }
 
     while(num_added_together%7!=0) {
-        num_of_len_seven= rand() % 9999999+1;
+        num_of_len_seven= rand() % 999999+1;
         num_added_together = 0;
         copy_of_num_of_len_seven = num_of_len_seven;
 
@@ -89,7 +89,7 @@ void gen_oem() {
         }
     }
 
-    while(printLen(num_of_len_seven)<7) {
+    while(printLen(num_of_len_seven)<6) {
         num_of_len_seven*=10;
     }
 
@@ -101,35 +101,35 @@ void gen_oem() {
 
     if(second_two_digits==100) {
         if(first_three_digits_length==1) {
-            printf("00%i00-OEM-%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
+            printf("00%i00-OEM-0%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
         } else if(first_three_digits_length==2) {
-            printf("0%i00-OEM-%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
+            printf("0%i00-OEM-0%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
         } else if(first_three_digits_length==3) {
-            printf("%i00-OEM-%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
+            printf("%i00-OEM-0%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
         }
     } else if(second_two_digits==101) {
         if(first_three_digits_length==1) {
-            printf("00%i01-OEM-%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
+            printf("00%i01-OEM-0%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
         } else if(first_three_digits_length==2) {
-            printf("0%i01-OEM-%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
+            printf("0%i01-OEM-0%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
         } else if(first_three_digits_length==3) {
-            printf("%i01-OEM-%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
+            printf("%i01-OEM-0%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
         }
     } else if(second_two_digits==102) {
         if(first_three_digits_length==1) {
-            printf("00%i02-OEM-%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
+            printf("00%i02-OEM-0%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
         } else if(first_three_digits_length==2) {
-            printf("0%i02-OEM-%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
+            printf("0%i02-OEM-0%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
         } else if(first_three_digits_length==3) {
-            printf("%i02-OEM-%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
+            printf("%i02-OEM-0%i-%i\n", first_three_digits, num_of_len_seven, last_five_digits);
         }
     } else {
         if(first_three_digits_length==1) {
-            printf("00%i%i-OEM-%i-%i\n", first_three_digits, second_two_digits, num_of_len_seven, last_five_digits);
+            printf("00%i%i-OEM-0%i-%i\n", first_three_digits, second_two_digits, num_of_len_seven, last_five_digits);
         } else if(first_three_digits_length==2) {
-            printf("0%i%i-OEM-%i-%i\n", first_three_digits, second_two_digits, num_of_len_seven, last_five_digits);
+            printf("0%i%i-OEM-0%i-%i\n", first_three_digits, second_two_digits, num_of_len_seven, last_five_digits);
         } else if(first_three_digits_length==3) {
-            printf("%i%i-OEM-%i-%i\n", first_three_digits, second_two_digits, num_of_len_seven, last_five_digits);
+            printf("%i%i-OEM-0%i-%i\n", first_three_digits, second_two_digits, num_of_len_seven, last_five_digits);
         }
     }
 }
