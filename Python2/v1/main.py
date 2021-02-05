@@ -8,24 +8,24 @@ def gen_key():
     while len(str(tripNum))<3:
         tripNum = str(tripNum)+"0"
 
-    num_of_len_seven = str(random.randint(0, 9999999))
+    mul_of_seven = str(random.randint(0, 9999999))
     num_added_together = 0
 
-    for a in num_of_len_seven:
+    for a in mul_of_seven:
         num_added_together+=int(a)
 
     while num_added_together%7!=0:
 
-        num_of_len_seven = str(random.randint(0, 9999999))
+        mul_of_seven = str(random.randint(0, 9999999))
         num_added_together = 0
 
-        for a in num_of_len_seven:
+        for a in mul_of_seven:
             num_added_together+=int(a)
 
-    while len(num_of_len_seven)<7:
-        num_of_len_seven+="0"
+    while len(mul_of_seven)<7:
+        mul_of_seven+="0"
 
-    key = str(tripNum)+"-"+str(num_of_len_seven)
+    key = str(tripNum)+"-"+str(mul_of_seven)
     print key
 
 def gen_oem():
@@ -37,29 +37,29 @@ def gen_oem():
     if len(second_two_digits)==3:
         second_two_digits = second_two_digits[1:]
 
-    num_of_len_seven = "0"+str(random.randint(0, 999999))
+    mul_of_seven = "0"+str(random.randint(0, 999999))
     num_added_together = 0
 
-    for a in num_of_len_seven:
+    for a in mul_of_seven:
         num_added_together+=int(a)
 
     while num_added_together%7!=0:
 
-        num_of_len_seven = "0"+str(random.randint(0, 999999))
+        mul_of_seven = "0"+str(random.randint(0, 999999))
         num_added_together = 0
 
-        for a in num_of_len_seven:
+        for a in mul_of_seven:
             num_added_together+=int(a)
 
-    while len(num_of_len_seven)<7:
-        num_of_len_seven+="0"
+    while len(mul_of_seven)<7:
+        mul_of_seven+="0"
 
     last_five_digits = str(random.randint(0,99999))
 
     while len(last_five_digits)<5:
         last_five_digits+="0"
 
-    key = str(first_three_digits)+str(second_two_digits)+"-OEM-"+str(num_of_len_seven)+"-"+str(last_five_digits)
+    key = str(first_three_digits)+str(second_two_digits)+"-OEM-"+str(mul_of_seven)+"-"+str(last_five_digits)
     print key
 
 def main():
