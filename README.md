@@ -13,7 +13,6 @@
 - Go,
 - Dart,
 - F#,
-- Haskell,
 - Kotlin,
 - Lua,
 - R,
