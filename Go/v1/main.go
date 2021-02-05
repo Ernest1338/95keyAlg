@@ -32,21 +32,21 @@ func gen_key() {
         first_three_digits += "0"
     }
     
-    var num_of_len_seven int = r1.Intn(9999999)
-    var num_added_together int = sumDigits(num_of_len_seven)
+    var mul_of_seven int = r1.Intn(9999999)
+    var num_added_together int = sumDigits(mul_of_seven)
     
     for num_added_together%7!=0 {
-        num_of_len_seven = r1.Intn(9999999)
-        num_added_together = sumDigits(num_of_len_seven)
+        mul_of_seven = r1.Intn(9999999)
+        num_added_together = sumDigits(mul_of_seven)
     }
     
-    var num_of_len_seven_string string = strconv.Itoa(num_of_len_seven)
+    var mul_of_seven_string string = strconv.Itoa(mul_of_seven)
     
-    for len(num_of_len_seven_string)<7 {
-        num_of_len_seven_string += "0"
+    for len(mul_of_seven_string)<7 {
+        mul_of_seven_string += "0"
     }
     
-    var key string = first_three_digits+"-"+num_of_len_seven_string
+    var key string = first_three_digits+"-"+mul_of_seven_string
     
     fmt.Println(key)
 }
@@ -67,18 +67,18 @@ func gen_oem() {
         second_two_digits = second_two_digits[1:]
     }
     
-    var num_of_len_seven int = r1.Intn(999999)
-    var num_added_together int = sumDigits(num_of_len_seven)
+    var mul_of_seven int = r1.Intn(999999)
+    var num_added_together int = sumDigits(mul_of_seven)
     
     for num_added_together%7!=0 {
-        num_of_len_seven = r1.Intn(999999)
-        num_added_together = sumDigits(num_of_len_seven)
+        mul_of_seven = r1.Intn(999999)
+        num_added_together = sumDigits(mul_of_seven)
     }
     
-    var num_of_len_seven_string string = strconv.Itoa(num_of_len_seven)
+    var mul_of_seven_string string = strconv.Itoa(mul_of_seven)
     
-    for len(num_of_len_seven_string)<6 {
-        num_of_len_seven_string += "0"
+    for len(mul_of_seven_string)<6 {
+        mul_of_seven_string += "0"
     }
     
     var last_five_digits string = strconv.Itoa(r1.Intn(99999))
@@ -87,7 +87,7 @@ func gen_oem() {
         last_five_digits += "0"
     }
     
-    var key string = first_three_digits+second_two_digits+"-OEM-0"+num_of_len_seven_string+"-"+last_five_digits
+    var key string = first_three_digits+second_two_digits+"-OEM-0"+mul_of_seven_string+"-"+last_five_digits
     
     fmt.Println(key)
 }
