@@ -11,7 +11,7 @@ function gen_key()
     end
     
     local mul_of_seven = tostring(math.random(0,9999999))
-    local num_added_together = 0;
+    local num_added_together = 0
     
     for i in mul_of_seven:gmatch"." do
         num_added_together = num_added_together + i
@@ -19,7 +19,7 @@ function gen_key()
     
     while(num_added_together%7~=0) do
         mul_of_seven = tostring(math.random(0,9999999))
-        num_added_together = 0;
+        num_added_together = 0
         
         for i in mul_of_seven:gmatch"." do
             num_added_together = num_added_together + i
@@ -49,7 +49,7 @@ function gen_oem()
     end
     
     local mul_of_seven = tostring(math.random(0,999999))
-    local num_added_together = 0;
+    local num_added_together = 0
     
     for i in mul_of_seven:gmatch"." do
         num_added_together = num_added_together + i
@@ -57,7 +57,7 @@ function gen_oem()
     
     while(num_added_together%7~=0) do
         mul_of_seven = tostring(math.random(0,999999))
-        num_added_together = 0;
+        num_added_together = 0
         
         for i in mul_of_seven:gmatch"." do
             num_added_together = num_added_together + i
