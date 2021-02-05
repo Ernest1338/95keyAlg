@@ -14,27 +14,27 @@ public class Main
             first_three_digits += "0";
         }
         
-        String num_of_len_seven = Integer.toString((int)Math.floor(Math.random() * (9999999 + 1)));
+        String mul_of_seven = Integer.toString((int)Math.floor(Math.random() * (9999999 + 1)));
         int num_added_together = 0;
         
-        for(int i=0; i<num_of_len_seven.length(); i++) {
-            num_added_together += (int)num_of_len_seven.charAt(i)-'0';
+        for(int i=0; i<mul_of_seven.length(); i++) {
+            num_added_together += (int)mul_of_seven.charAt(i)-'0';
         }
         
         while(num_added_together%7!=0) {
-            num_of_len_seven = Integer.toString((int)Math.floor(Math.random() * (9999999 + 1)));
+            mul_of_seven = Integer.toString((int)Math.floor(Math.random() * (9999999 + 1)));
             num_added_together = 0;
             
-            for(int i=0; i<num_of_len_seven.length(); i++) {
-                num_added_together += (int)num_of_len_seven.charAt(i)-'0';
+            for(int i=0; i<mul_of_seven.length(); i++) {
+                num_added_together += (int)mul_of_seven.charAt(i)-'0';
             }
         }
         
-        while(num_of_len_seven.length()<7) {
-            num_of_len_seven += "0";
+        while(mul_of_seven.length()<7) {
+            mul_of_seven += "0";
         }
         
-        String key = first_three_digits+"-"+num_of_len_seven;
+        String key = first_three_digits+"-"+mul_of_seven;
         
         System.out.println(key);
     }
@@ -51,24 +51,24 @@ public class Main
             second_two_digits = second_two_digits.substring(1);
         }
         
-        String num_of_len_seven = Integer.toString((int)Math.floor(Math.random() * (999999 + 1)));
+        String mul_of_seven = Integer.toString((int)Math.floor(Math.random() * (999999 + 1)));
         int num_added_together = 0;
         
-        for(int i=0; i<num_of_len_seven.length(); i++) {
-            num_added_together += (int)num_of_len_seven.charAt(i)-'0';
+        for(int i=0; i<mul_of_seven.length(); i++) {
+            num_added_together += (int)mul_of_seven.charAt(i)-'0';
         }
         
         while(num_added_together%7!=0) {
-            num_of_len_seven = Integer.toString((int)Math.floor(Math.random() * (999999 + 1)));
+            mul_of_seven = Integer.toString((int)Math.floor(Math.random() * (999999 + 1)));
             num_added_together = 0;
             
-            for(int i=0; i<num_of_len_seven.length(); i++) {
-                num_added_together += (int)num_of_len_seven.charAt(i)-'0';
+            for(int i=0; i<mul_of_seven.length(); i++) {
+                num_added_together += (int)mul_of_seven.charAt(i)-'0';
             }
         }
         
-        while(num_of_len_seven.length()<6) {
-            num_of_len_seven += "0";
+        while(mul_of_seven.length()<6) {
+            mul_of_seven += "0";
         }
         
         String last_five_digits = Integer.toString((int)Math.floor(Math.random() * (99999 + 1)));
@@ -77,7 +77,7 @@ public class Main
             last_five_digits += "0";
         }
         
-        String key = first_three_digits+second_two_digits+"-OEM-0"+num_of_len_seven+"-"+last_five_digits;
+        String key = first_three_digits+second_two_digits+"-OEM-0"+mul_of_seven+"-"+last_five_digits;
         
         System.out.println(key);
     }
