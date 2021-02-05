@@ -12,27 +12,27 @@ fn gen_key() {
         first_three_digits.push('0');
     }
 
-    let mut num_of_len_seven = rand::thread_rng().gen_range(0..9999999+1).to_string();
+    let mut mul_of_seven = rand::thread_rng().gen_range(0..9999999+1).to_string();
     let mut num_added_together = 0;
 
-    for i in num_of_len_seven.chars() {
+    for i in mul_of_seven.chars() {
         num_added_together = num_added_together + i.to_string().parse::<i32>().unwrap();
     }
 
     while num_added_together%7!=0 {
-        num_of_len_seven = rand::thread_rng().gen_range(0..9999999+1).to_string();
+        mul_of_seven = rand::thread_rng().gen_range(0..9999999+1).to_string();
         num_added_together = 0;
 
-        for i in num_of_len_seven.chars() {
+        for i in mul_of_seven.chars() {
             num_added_together = num_added_together + i.to_string().parse::<i32>().unwrap();
         }
     }
 
-    while num_of_len_seven.chars().count()<7 {
-        num_of_len_seven.push('0');
+    while mul_of_seven.chars().count()<7 {
+        mul_of_seven.push('0');
     }
 
-    let key = first_three_digits+"-"+&num_of_len_seven;
+    let key = first_three_digits+"-"+&mul_of_seven;
 
     println!("{}", key);
 }
@@ -50,24 +50,24 @@ fn gen_oem() {
         second_two_digits.remove(0);
     }
 
-    let mut num_of_len_seven = rand::thread_rng().gen_range(0..999999+1).to_string();
+    let mut mul_of_seven = rand::thread_rng().gen_range(0..999999+1).to_string();
     let mut num_added_together = 0;
 
-    for i in num_of_len_seven.chars() {
+    for i in mul_of_seven.chars() {
         num_added_together = num_added_together + i.to_string().parse::<i32>().unwrap();
     }
 
     while num_added_together%7!=0 {
-        num_of_len_seven = rand::thread_rng().gen_range(0..999999+1).to_string();
+        mul_of_seven = rand::thread_rng().gen_range(0..999999+1).to_string();
         num_added_together = 0;
 
-        for i in num_of_len_seven.chars() {
+        for i in mul_of_seven.chars() {
             num_added_together = num_added_together + i.to_string().parse::<i32>().unwrap();
         }
     }
 
-    while num_of_len_seven.chars().count()<6 {
-        num_of_len_seven.push('0');
+    while mul_of_seven.chars().count()<6 {
+        mul_of_seven.push('0');
     }
 
     let mut last_five_digits = rand::thread_rng().gen_range(0..99999+1).to_string();
@@ -76,7 +76,7 @@ fn gen_oem() {
         last_five_digits.push('0');
     }
 
-    let key = first_three_digits+&second_two_digits+"-OEM-0"+&num_of_len_seven+"-"+&last_five_digits;
+    let key = first_three_digits+&second_two_digits+"-OEM-0"+&mul_of_seven+"-"+&last_five_digits;
 
     println!("{}", key);
 
