@@ -10,27 +10,27 @@ function gen_key() {
         first_three_digits+="0";
     }
 
-    var num_of_len_seven = (Math.floor((Math.random() * 9999999) + 0)).toString();
+    var mul_of_seven = (Math.floor((Math.random() * 9999999) + 0)).toString();
     var num_added_together = 0;
 
-    for(i=0; i<num_of_len_seven.length; i++) {
-        num_added_together+=parseInt(num_of_len_seven[i]);
+    for(i=0; i<mul_of_seven.length; i++) {
+        num_added_together+=parseInt(mul_of_seven[i]);
     }
 
     while(num_added_together%7!=0) {
-        num_of_len_seven = (Math.floor((Math.random() * 9999999) + 0)).toString();
+        mul_of_seven = (Math.floor((Math.random() * 9999999) + 0)).toString();
         num_added_together = 0;
 
-        for(i=0; i<num_of_len_seven.length; i++) {
-            num_added_together+=parseInt(num_of_len_seven[i]);
+        for(i=0; i<mul_of_seven.length; i++) {
+            num_added_together+=parseInt(mul_of_seven[i]);
         }
     }
 
-    while(num_of_len_seven.length<7) {
-        num_of_len_seven+="0";
+    while(mul_of_seven.length<7) {
+        mul_of_seven+="0";
     }
 
-    var key = first_three_digits+"-"+num_of_len_seven;
+    var key = first_three_digits+"-"+mul_of_seven;
 
     document.write(key+"<br>");
 
@@ -48,24 +48,24 @@ function gen_oem() {
         second_two_digits = second_two_digits.substring(1);
     }
 
-    var num_of_len_seven = (Math.floor((Math.random() * 999999) + 0)).toString();
+    var mul_of_seven = (Math.floor((Math.random() * 999999) + 0)).toString();
     var num_added_together = 0;
 
-    for(i=0; i<num_of_len_seven.length; i++) {
-        num_added_together+=parseInt(num_of_len_seven[i]);
+    for(i=0; i<mul_of_seven.length; i++) {
+        num_added_together+=parseInt(mul_of_seven[i]);
     }
 
     while(num_added_together%7!=0) {
-        num_of_len_seven = (Math.floor((Math.random() * 999999) + 0)).toString();
+        mul_of_seven = (Math.floor((Math.random() * 999999) + 0)).toString();
         num_added_together = 0;
 
-        for(i=0; i<num_of_len_seven.length; i++) {
-            num_added_together+=parseInt(num_of_len_seven[i]);
+        for(i=0; i<mul_of_seven.length; i++) {
+            num_added_together+=parseInt(mul_of_seven[i]);
         }
     }
 
-    while(num_of_len_seven.length<6) {
-        num_of_len_seven+="0";
+    while(mul_of_seven.length<6) {
+        mul_of_seven+="0";
     }
 
     var last_five_digits = (Math.floor((Math.random() * 99999) + 0)).toString();
@@ -74,7 +74,7 @@ function gen_oem() {
         last_five_digits+="0"
     }
 
-    var key = first_three_digits+second_two_digits+"-OEM-0"+num_of_len_seven+"-"+last_five_digits;
+    var key = first_three_digits+second_two_digits+"-OEM-0"+mul_of_seven+"-"+last_five_digits;
 
     document.write(key+"<br>");
 
