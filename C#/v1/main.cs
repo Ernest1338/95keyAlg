@@ -15,27 +15,27 @@ class main {
         first_three_digits+="0";
     }
     
-    string num_of_len_seven = rnd.Next(0, 9999999+1).ToString();
+    string mul_of_seven = rnd.Next(0, 9999999+1).ToString();
     int num_added_together = 0;
     
-    for (int i=0; i<num_of_len_seven.Length; i++) {
-        num_added_together+=int.Parse(num_of_len_seven[i].ToString());
+    for (int i=0; i<mul_of_seven.Length; i++) {
+        num_added_together+=int.Parse(mul_of_seven[i].ToString());
     }
     
     while (num_added_together%7!=0) {
-        num_of_len_seven = rnd.Next(0, 9999999+1).ToString();
+        mul_of_seven = rnd.Next(0, 9999999+1).ToString();
         num_added_together = 0;
         
-        for (int i=0; i<num_of_len_seven.Length; i++) {
-            num_added_together+=int.Parse(num_of_len_seven[i].ToString());
+        for (int i=0; i<mul_of_seven.Length; i++) {
+            num_added_together+=int.Parse(mul_of_seven[i].ToString());
         }
     }
     
-    while (num_of_len_seven.Length<7) {
-        num_of_len_seven+="0";
+    while (mul_of_seven.Length<7) {
+        mul_of_seven+="0";
     }
     
-    string key = first_three_digits+"-"+num_of_len_seven;
+    string key = first_three_digits+"-"+mul_of_seven;
     
     Console.WriteLine(key);
   }
@@ -53,24 +53,24 @@ class main {
         second_two_digits = second_two_digits.Remove(0, 1);
     }
     
-    string num_of_len_seven = rnd.Next(0, 999999+1).ToString();
+    string mul_of_seven = rnd.Next(0, 999999+1).ToString();
     int num_added_together = 0;
     
-    for (int i=0; i<num_of_len_seven.Length; i++) {
-        num_added_together+=int.Parse(num_of_len_seven[i].ToString());
+    for (int i=0; i<mul_of_seven.Length; i++) {
+        num_added_together+=int.Parse(mul_of_seven[i].ToString());
     }
     
     while (num_added_together%7!=0) {
-        num_of_len_seven = rnd.Next(0, 999999+1).ToString();
+        mul_of_seven = rnd.Next(0, 999999+1).ToString();
         num_added_together = 0;
         
-        for (int i=0; i<num_of_len_seven.Length; i++) {
-            num_added_together+=int.Parse(num_of_len_seven[i].ToString());
+        for (int i=0; i<mul_of_seven.Length; i++) {
+            num_added_together+=int.Parse(mul_of_seven[i].ToString());
         }
     }
     
-    while (num_of_len_seven.Length<6) {
-        num_of_len_seven+="0";
+    while (mul_of_seven.Length<6) {
+        mul_of_seven+="0";
     }
     
     string last_five_digits = rnd.Next(0, 99999+1).ToString();
@@ -79,7 +79,7 @@ class main {
         last_five_digits+="0";
     }
     
-    string key = first_three_digits+second_two_digits+"-OEM-0"+num_of_len_seven+"-"+last_five_digits;
+    string key = first_three_digits+second_two_digits+"-OEM-0"+mul_of_seven+"-"+last_five_digits;
     
     Console.WriteLine(key);
   }
