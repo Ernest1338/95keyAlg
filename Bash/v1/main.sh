@@ -17,34 +17,34 @@ gen_key() {
         first_three_digits_len=$(echo $first_three_digits | wc -c)
     done
 
-    num_of_len_seven=$[ 1 + $RANDOM * 999 % 9999999 ]
+    mul_of_seven=$[ 1 + $RANDOM * 999 % 9999999 ]
     num_added_together=0
 
-    for i in $(echo $num_of_len_seven | sed -e 's/\(.\)/\1\n/g')
+    for i in $(echo $mul_of_seven | sed -e 's/\(.\)/\1\n/g')
     do
         num_added_together=$(( $num_added_together + $i ))
     done
 
     while [ $(( $num_added_together % 7 )) -ne 0 ]
     do
-        num_of_len_seven=$[ 1 + $RANDOM * 999 % 9999999 ]
+        mul_of_seven=$[ 1 + $RANDOM * 999 % 9999999 ]
         num_added_together=0
 
-        for i in $(echo $num_of_len_seven | sed -e 's/\(.\)/\1\n/g')
+        for i in $(echo $mul_of_seven | sed -e 's/\(.\)/\1\n/g')
         do
             num_added_together=$(( $num_added_together + $i ))
         done
     done
 
-    num_of_len_seven_len=$(echo $num_of_len_seven | wc -c)
+    mul_of_seven_len=$(echo $mul_of_seven | wc -c)
 
-    while [ $num_of_len_seven_len -lt 8 ]
+    while [ $mul_of_seven_len -lt 8 ]
     do
-        num_of_len_seven=$(echo $num_of_len_seven\0)
-        num_of_len_seven_len=$(echo $num_of_len_seven | wc -c)
+        mul_of_seven=$(echo $mul_of_seven\0)
+        mul_of_seven_len=$(echo $mul_of_seven | wc -c)
     done
 
-    key=$(echo $first_three_digits\-$num_of_len_seven)
+    key=$(echo $first_three_digits\-$mul_of_seven)
 
     echo $key
 }
@@ -68,31 +68,31 @@ gen_oem() {
         second_two_digits=${second_two_digits:1}
     fi
 
-    num_of_len_seven=$[ 1 + $RANDOM * 999 % 999999 ]
+    mul_of_seven=$[ 1 + $RANDOM * 999 % 999999 ]
     num_added_together=0
 
-    for i in $(echo $num_of_len_seven | sed -e 's/\(.\)/\1\n/g')
+    for i in $(echo $mul_of_seven | sed -e 's/\(.\)/\1\n/g')
     do
         num_added_together=$(( $num_added_together + $i ))
     done
 
     while [ $(( $num_added_together % 7 )) -ne 0 ]
     do
-        num_of_len_seven=$[ 1 + $RANDOM * 999 % 999999 ]
+        mul_of_seven=$[ 1 + $RANDOM * 999 % 999999 ]
         num_added_together=0
 
-        for i in $(echo $num_of_len_seven | sed -e 's/\(.\)/\1\n/g')
+        for i in $(echo $mul_of_seven | sed -e 's/\(.\)/\1\n/g')
         do
             num_added_together=$(( $num_added_together + $i ))
         done
     done
 
-    num_of_len_seven_len=$(echo $num_of_len_seven | wc -c)
+    mul_of_seven_len=$(echo $mul_of_seven | wc -c)
 
-    while [ $num_of_len_seven_len -lt 7 ]
+    while [ $mul_of_seven_len -lt 7 ]
     do
-        num_of_len_seven=$(echo $num_of_len_seven\0)
-        num_of_len_seven_len=$(echo $num_of_len_seven | wc -c)
+        mul_of_seven=$(echo $mul_of_seven\0)
+        mul_of_seven_len=$(echo $mul_of_seven | wc -c)
     done
 
     last_five_digits=$[ 1 + $RANDOM * 99 % 99999 ]
@@ -104,7 +104,7 @@ gen_oem() {
         last_five_digits_len=$(echo $last_five_digits | wc -c)
     done
 
-    key=$(echo $first_three_digits$second_two_digits\-OEM-0$num_of_len_seven\-$last_five_digits)
+    key=$(echo $first_three_digits$second_two_digits\-OEM-0$mul_of_seven\-$last_five_digits)
 
     echo $key
 }
