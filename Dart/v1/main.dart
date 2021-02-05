@@ -14,27 +14,27 @@ gen_key() {
         first_three_digits += "0";
     }
     
-    String num_of_len_seven = rng.nextInt(9999999).toString();
+    String mul_of_seven = rng.nextInt(9999999).toString();
     var num_added_together = 0;
     
-    for(var i = 0; i < num_of_len_seven.length; i++) {
-        num_added_together += int.parse(num_of_len_seven[i]);
+    for(var i = 0; i < mul_of_seven.length; i++) {
+        num_added_together += int.parse(mul_of_seven[i]);
     }
     
     while(num_added_together%7!=0) {
-        num_of_len_seven = rng.nextInt(9999999).toString();
+        mul_of_seven = rng.nextInt(9999999).toString();
         num_added_together = 0;
         
-        for(var i = 0; i < num_of_len_seven.length; i++) {
-            num_added_together += int.parse(num_of_len_seven[i]);
+        for(var i = 0; i < mul_of_seven.length; i++) {
+            num_added_together += int.parse(mul_of_seven[i]);
         }
     }
     
-    while(num_of_len_seven.length<7) {
-        num_of_len_seven += "0";
+    while(mul_of_seven.length<7) {
+        mul_of_seven += "0";
     }
     
-    String key = first_three_digits+"-"+num_of_len_seven;
+    String key = first_three_digits+"-"+mul_of_seven;
     
     print(key);
 }
@@ -54,24 +54,24 @@ gen_oem() {
         second_two_digits = second_two_digits.substring(1);
     }
     
-    String num_of_len_seven = rng.nextInt(999999).toString();
+    String mul_of_seven = rng.nextInt(999999).toString();
     var num_added_together = 0;
     
-    for(var i = 0; i < num_of_len_seven.length; i++) {
-        num_added_together += int.parse(num_of_len_seven[i]);
+    for(var i = 0; i < mul_of_seven.length; i++) {
+        num_added_together += int.parse(mul_of_seven[i]);
     }
     
     while(num_added_together%7!=0) {
-        num_of_len_seven = rng.nextInt(999999).toString();
+        mul_of_seven = rng.nextInt(999999).toString();
         num_added_together = 0;
         
-        for(var i = 0; i < num_of_len_seven.length; i++) {
-            num_added_together += int.parse(num_of_len_seven[i]);
+        for(var i = 0; i < mul_of_seven.length; i++) {
+            num_added_together += int.parse(mul_of_seven[i]);
         }
     }
     
-    while(num_of_len_seven.length<6) {
-        num_of_len_seven += "0";
+    while(mul_of_seven.length<6) {
+        mul_of_seven += "0";
     }
     
     String last_five_digits = rng.nextInt(99999).toString();
@@ -80,7 +80,7 @@ gen_oem() {
         last_five_digits += "0";
     }
     
-    String key = first_three_digits+second_two_digits+"-OEM-0"+num_of_len_seven+"-"+last_five_digits;
+    String key = first_three_digits+second_two_digits+"-OEM-0"+mul_of_seven+"-"+last_five_digits;
     
     print(key);
 }
