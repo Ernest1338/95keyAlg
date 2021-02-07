@@ -3,7 +3,7 @@ function gen_key() {
 
     while(first_three_digits=="333" || first_three_digits=="444" || first_three_digits=="555" || first_three_digits=="666" 
         || first_three_digits=="777" || first_three_digits=="888" || first_three_digits=="999") {
-            first_three_digits = (Math.floor((Math.random() * 999) + 0)).toString();
+        first_three_digits = (Math.floor((Math.random() * 999) + 0)).toString();
     }
 
     while(first_three_digits.length<3) {
