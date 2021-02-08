@@ -1,12 +1,12 @@
 import random
 
 def gen_key():
-    tripNum = random.randint(0, 999)
-    while tripNum==333 or tripNum==444 or tripNum==555 or tripNum==666 or tripNum==777 or tripNum==888 or tripNum==999:
-        tripNum = random.randint(0, 999)
+    first_three_digits = random.randint(0, 999)
+    while first_three_digits==333 or first_three_digits==444 or first_three_digits==555 or first_three_digits==666 or first_three_digits==777 or first_three_digits==888 or first_three_digits==999:
+        first_three_digits = random.randint(0, 999)
 
-    while len(str(tripNum))<3:
-        tripNum = str(tripNum)+"0"
+    while len(str(first_three_digits))<3:
+        first_three_digits = str(first_three_digits)+"0"
 
     mul_of_seven = str(random.randint(0, 9999999))
     num_added_together = 0
@@ -25,7 +25,7 @@ def gen_key():
     while len(mul_of_seven)<7:
         mul_of_seven+="0"
 
-    key = str(tripNum)+"-"+str(mul_of_seven)
+    key = str(first_three_digits)+"-"+str(mul_of_seven)
     print key
 
 def gen_oem():
