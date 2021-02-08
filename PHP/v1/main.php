@@ -1,4 +1,5 @@
 <?php
+
 function gen_key() {
     // generating random number in range from 0 to 999 (max 3 digit number)
     $first_three_digits = rand(0, 999);
