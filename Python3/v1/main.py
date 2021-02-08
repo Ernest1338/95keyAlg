@@ -2,15 +2,15 @@ import random
 
 def gen_key():
     # generating random number in range from 0 to 999 (max 3 digit number)
-    tripNum = random.randint(0, 999)
+    first_three_digits = random.randint(0, 999)
 
-    while tripNum==333 or tripNum==444 or tripNum==555 or tripNum==666 or tripNum==777 or tripNum==888 or tripNum==999:
+    while first_three_digits==333 or first_three_digits==444 or first_three_digits==555 or first_three_digits==666 or first_three_digits==777 or first_three_digits==888 or first_three_digits==999:
         # regenerating random number to the point when they are not repeating (excluding 111 and 222)
-        tripNum = random.randint(0, 999)
+        first_three_digits = random.randint(0, 999)
 
-    while len(str(tripNum))<3:
+    while len(str(first_three_digits))<3:
         # adding trailing zeros if necessary (to match length of 3)
-        tripNum = str(tripNum)+"0"
+        first_three_digits = str(first_three_digits)+"0"
 
     # generating random number in range from 0 to 9999999 (max 7 digit number)
     mul_of_seven = str(random.randint(0, 9999999))
@@ -42,7 +42,7 @@ def gen_key():
         mul_of_seven+="0"
 
     # combining all needed variables with dashes and other constants into variable named key
-    key = str(tripNum)+"-"+str(mul_of_seven)
+    key = str(first_three_digits)+"-"+str(mul_of_seven)
 
     # displaying generated key to user
     print(key)
