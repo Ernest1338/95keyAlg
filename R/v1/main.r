@@ -75,7 +75,7 @@ gen_oem <- function() {
         second_two_digits = substr(second_two_digits, 2, 3)
     }
 
-    # generating random number in range from 0 to 999999 (max 6 digit number) and adding zero at the beginning
+    # generating random number in range from 0 to 999999 (max 6 digit number)
     mul_of_seven = sprintf("%d", floor(runif(1, 0, 999999+1)))
 
     # creating variable which will be use to count sum of all digits generated in the previous step
