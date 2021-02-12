@@ -30,8 +30,8 @@ def gen_key():
 
     # searching for remainder value to make mul_of_seven divisible by 7
     for a in range(7):
-        # adding this value to the end of mul_of_seven variable
         if (num_added_together+(a+1))%7==0:
+            # adding this value to the end of mul_of_seven variable
             mul_of_seven+=str(a+1)
             break
 
