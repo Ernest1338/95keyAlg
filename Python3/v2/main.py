@@ -97,13 +97,13 @@ def main():
     print("5 CD Keys:")
 
     # generating 5 keys (and displaying them)
-    for _ in range(5000000):
+    for _ in range(5):
         gen_key()
 
     print("\n5 CD Keys (OEM):")
 
     # generating 5 OEM keys (and displaying them)
-    for _ in range(5000000):
+    for _ in range(5):
         gen_oem()
 
 # executing main function
