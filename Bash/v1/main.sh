@@ -127,7 +127,7 @@ gen_oem() {
 
     while [ $mul_of_seven_len -lt 7 ]
     do
-        # adding trailing zeros if necessary (to match length of 7)
+        # adding trailing zeros if necessary (to match length of 6)
         mul_of_seven=$(echo $mul_of_seven\0)
         mul_of_seven_len=$(echo $mul_of_seven | wc -c)
     done
