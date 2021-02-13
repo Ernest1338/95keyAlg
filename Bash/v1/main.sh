@@ -93,7 +93,7 @@ gen_oem() {
         second_two_digits=${second_two_digits:1}
     fi
 
-    # generating random number in range from 0 to 999999 (max 6 digit number) and adding zero at the beginning
+    # generating random number in range from 0 to 999999 (max 6 digit number)
     mul_of_seven=$[ 1 + $RANDOM * 999 % 999999 ]
 
     # creating variable which will be use to count sum of all digits generated in the previous step
