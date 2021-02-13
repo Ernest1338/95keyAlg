@@ -90,14 +90,6 @@ void gen_oem() {
         mul_of_seven+="0";
     }
 
-    // generating random number in range from 0 to 99999 (max 5 digit number)
-    std::string last_five_digits = std::to_string(rand() % 99999+1);
-
-    while(last_five_digits.size()<5) {
-        // adding trailing zeros if necessary (to match length of 5)
-        last_five_digits+="0";
-    }
-    
     // searching for remainder value to make mul_of_seven divisible by 7
     for(int i=0; i<7; i++) {
         if((num_added_together+(i+1))%7==0) {
@@ -105,6 +97,14 @@ void gen_oem() {
             mul_of_seven+=std::to_string(i+1);
             break;
         }
+    }
+
+    // generating random number in range from 0 to 99999 (max 5 digit number)
+    std::string last_five_digits = std::to_string(rand() % 99999+1);
+
+    while(last_five_digits.size()<5) {
+        // adding trailing zeros if necessary (to match length of 5)
+        last_five_digits+="0";
     }
 
     // combining all needed variables with dashes and other constants into variable named key
