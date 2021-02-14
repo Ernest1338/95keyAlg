@@ -94,8 +94,8 @@ def gen_oem()
         end
     end
 
-    # adding trailing zeros if necessary (to match length of 6)
     while mul_of_seven.length<6
+        # adding trailing zeros if necessary (to match length of 6)
         mul_of_seven += "0"
     end
 
