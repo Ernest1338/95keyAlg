@@ -138,13 +138,13 @@ let main arg =
     printfn "5 CD Keys:"
 
     // generating 5 keys (and displaying them)
-    for _=1 to 5 do
+    for i=1 to 5 do
         gen_key 1
 
     printfn "\n5 CD Keys (OEM):"
 
     // generating 5 OEM keys (and displaying them)
-    for _=1 to 5 do
+    for i=1 to 5 do
         gen_oem 1
 
 // executing main function
